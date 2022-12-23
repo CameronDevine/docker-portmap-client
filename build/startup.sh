@@ -9,14 +9,14 @@ export KEEPALIVE_INTERVAL="${KEEPALIVE_INTERVAL:-"30"}"
 
 # Copy the ssh_client_key file in the home dir of the portmap user and set the
 # right permissions
-cp "/ssh_client_key" "/home/portmap/.ssh/ssh_client_key"
+cp "/home/portmap/data/ssh_client_key" "/home/portmap/.ssh/ssh_client_key"
 chown portmap:portmap "/home/portmap/.ssh/ssh_client_key"
 chmod 600 "/home/portmap/.ssh/ssh_client_key"
 
 # Copy the known_hosts file (if exists) in the home dir of the portmap user and
 # set the right permissions
-if [ -f "/known_hosts" ]; then
-    cp "/known_hosts" "/home/portmap/.ssh/known_hosts"
+if [ -f "/home/portmap/data/known_hosts" ]; then
+    cp "/home/portmap/data/known_hosts" "/home/portmap/.ssh/known_hosts"
     chown portmap:portmap "/home/portmap/.ssh/known_hosts"
     chmod 644 "/home/portmap/.ssh/known_hosts"
 fi
